@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: 'file:./build/mavenPlotRepo')
+        pom.project {
+            groupId 'com.plotprojects'
+            artifactId 'plot-facebook-places-lib'
+            version "1.0.0"
+            packaging 'aar'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':AndroidRetailLib')
+    api 'com.android.support:support-core-utils:27.1.1'
+    implementation 'com.facebook.android:facebook-places:5.0.1'
+    implementation 'com.android.support:support-compat:27.1.1'
+
+    androidTestImplementation 'androidx.test:core:1.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+}
