@@ -1,4 +1,4 @@
-# PlotAndroidFacebookExample
+# Plot Android Facebook Places Example
 
 # Plot External Region Trigger example with Facebook Places
 This project exemplifies how to use the Plot External Region Trigger feature using Facebook places API. In this example, we did all the required steps from the plugin integration guide. If you want to know more about the Plot Projects plugin, go to [the Plot Projects website](https://www.plotprojects.com).
