@@ -1,3 +1,5 @@
+# This repository is archived and no longer mantained
+
 # Facebook Places Android Integration Example
 
 # Plot External Region Trigger example with Facebook Places
